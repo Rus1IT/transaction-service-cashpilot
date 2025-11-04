@@ -24,11 +24,18 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    pdfboxVersion = '3.0.2'
+}
+
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.apache.pdfbox:pdfbox:${pdfboxVersion}"
+    implementation "org.apache.pdfbox:pdfbox-io:${pdfboxVersion}"
+    implementation "org.apache.pdfbox:pdfbox-tools:${pdfboxVersion}"
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
